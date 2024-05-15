@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915517789922",
+    "project_id": "skycarta-5bbba",
+    "storage_bucket": "skycarta-5bbba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915517789922:android:3ff4dfe42c367b131370bb",
+        "android_client_info": {
+          "package_name": "com.example.skycarta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCabaWyRJM28so1K1Wc10tZUjMepS8koww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

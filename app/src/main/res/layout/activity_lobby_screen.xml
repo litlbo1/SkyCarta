@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_blue"
+    tools:context=".Lobby_screen">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="330dp"
+            android:contentDescription="@string/img"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/lobby_back" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress3"
+            android:layout_width="340dp"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/lobby_elem"
+            android:ems="10"
+            android:hint="@string/lobby_tf"
+            android:inputType="textEmailAddress"
+            android:padding="10sp"
+            android:autofillHints="" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/txt1"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/lobby_elem"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Горизонтальный LinearLayout для верхних TextView -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="12:00"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="35dp"
+                    android:textColor="#37474F" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:text="14:00"
+                    android:textSize="16dp"
+                    android:layout_marginEnd="35dp"
+                    android:textColor="#37474F" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SVO"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="#37474F" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/icon_plane" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GUW"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#37474F" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Москва"
+                    android:layout_marginStart="30dp"
+                    android:gravity="start"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="#37474F" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="Атырау"
+                    android:textColor="#37474F" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="Сейчас Популярно"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="190dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/RoundedCorners"
+                        app:srcCompat="@drawable/dagestan_img" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/RoundedCorners"
+                        app:srcCompat="@drawable/moscow_img" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/RoundedCorners"
+                        app:srcCompat="@drawable/dagestan_img" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

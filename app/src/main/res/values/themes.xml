@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SkyCarta" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/main_blue</item>
+        <item name="android:navigationBarColor">@color/main_blue</item>
+    </style>
+
+    <style name="Theme.SkyCarta" parent="Base.Theme.SkyCarta" />
+
+    <style name="Theme.SkyCarta.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SkyCarta.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SkyCarta.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

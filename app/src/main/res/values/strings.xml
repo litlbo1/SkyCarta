@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SkyCarta</string>
+    <string name="Create">Создать</string>
+    <string name="Login">Войти</string>
+    <string name="Hello_txt">Добро пожаловать!</string>
+    <string name="todo">TODO</string>
+    <string name="register">Регистрация</string>
+    <string name="main_name">Добро</string>
+    <string name="main_name2">Пожаловать</string>
+    <string name="have_acc">У вас есть аккаунт?</string>
+    <string name="img">IMG</string>
+    <string name="lobby_text">Куда полетим сегодня?</string>
+    <string name="lobby_tf">введите аэропорт</string>
+    <string name="txt1">Ваши рейсы</string>
+    <string name="email">Почта</string>
+    <string name="pass">Пароль</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+
+    <string name="title_activity_lobby_screen2">Lobby_screen2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Главная</string>
+    <string name="menu_profile">Профиль</string>
+    <string name="menu_settings">Настройки</string>
+
+    <string name="user_name">Вехов Эдуард</string>
+
+
+    //main screen
+    <string name="btn_main_search">Найти рейс</string>
+</resources>
