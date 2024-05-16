@@ -1,7 +1,10 @@
 package com.example.skycarta
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.skycarta.databinding.ActivityTestTestBinding
 import okhttp3.OkHttpClient
@@ -13,11 +16,14 @@ import java.util.concurrent.TimeUnit
 class Test_Test : AppCompatActivity() {
 
     private lateinit var binding: ActivityTestTestBinding
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTestTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPreferences = getSharedPreferences("favorites", Context.MODE_PRIVATE)
 
         val airportId = intent.getStringExtra("AIRPORT_ID")
         if (airportId != null) {
@@ -51,15 +57,24 @@ class Test_Test : AppCompatActivity() {
                         try {
                             if (responseBody != null) {
                                 val flights = JSONArray(responseBody)
-                                val flightInfo = StringBuilder()
+                                binding.flightsContainer.removeAllViews()
                                 for (i in 0 until flights.length()) {
                                     val flight = flights.getJSONObject(i)
                                     val destination = flight.getString("destination")
                                     val departureTime = flight.getString("departure_time")
-                                    flightInfo.append("Destination: $destination\n")
-                                    flightInfo.append("Departure Time: $departureTime\n\n")
+
+                                    val flightView = layoutInflater.inflate(R.layout.flight_item, binding.flightsContainer, false)
+                                    val flightInfoTextView = flightView.findViewById<TextView>(R.id.flightInfoTextView)
+                                    val favoriteButton = flightView.findViewById<Button>(R.id.favoriteButton)
+
+                                    flightInfoTextView.text = "Destination: $destination\nDeparture Time: $departureTime"
+
+                                    favoriteButton.setOnClickListener {
+                                        addToFavorites(destination, departureTime)
+                                    }
+
+                                    binding.flightsContainer.addView(flightView)
                                 }
-                                binding.flightInfoTextView.text = flightInfo.toString()
                             } else {
                                 binding.flightInfoTextView.text = "Error: Response body is null"
                             }
@@ -75,5 +90,11 @@ class Test_Test : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun addToFavorites(destination: String, departureTime: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString("$destination$departureTime", "Destination: $destination, Departure Time: $departureTime")
+        editor.apply()
     }
 }
