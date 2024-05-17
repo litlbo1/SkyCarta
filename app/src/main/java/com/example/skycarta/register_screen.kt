@@ -37,7 +37,8 @@ class register_screen : AppCompatActivity() {
                             "email" to email,
                             "password" to password,
                             "name" to name,
-                            "surname" to surname
+                            "surname" to surname,
+                            "role" to "user"
                             // Добавьте другие поля, если нужно
                         )
 
@@ -46,7 +47,7 @@ class register_screen : AppCompatActivity() {
                             .addOnSuccessListener {
                                 // Пользователь добавлен в Firestore
                                 Toast.makeText(this, "Аккаунт успешно создан", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this@register_screen, Lobby_screen::class.java)
+                                val intent = Intent(this@register_screen, Lobby_screen2::class.java)
                                 startActivity(intent)
                                 finish()
                             }
