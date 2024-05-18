@@ -69,7 +69,7 @@ class Search_screen : AppCompatActivity() {
                 1 -> {
                     val intent = Intent(this, Test_Test::class.java)
                     intent.putExtra("AIRPORT_ID", airportId)
-                    intent.putExtra("AIRPORT_NAME", airport) // Передаем название аэропорта
+                    intent.putExtra("AIRPORT_NAME", airport)
                     startActivity(intent)
                 }
             }
@@ -80,7 +80,7 @@ class Search_screen : AppCompatActivity() {
     private fun showSecondAirportDialog() {
         val airportMap = mapOf(
             "Moscow" to "svo",
-            "Astrakhan" to "asf",
+            "Astrakhan" to "urwa",
             "Samara" to "kuf",
             "Saratov" to "rtw"
         )

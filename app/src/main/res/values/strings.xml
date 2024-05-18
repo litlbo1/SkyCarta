@@ -18,6 +18,8 @@
     <string name="surname">Фамилия</string>
     <string name="fav_btn">Добавить в избранное</string>
     <string name="load_more">Загрузить больше</string>
+    <string name="remove_favorite">Убрать из избранного</string>
+    <string name="loading_info">Идет загрузка ожидайте</string>
 
     <string name="title_activity_lobby_screen2">Lobby_screen2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

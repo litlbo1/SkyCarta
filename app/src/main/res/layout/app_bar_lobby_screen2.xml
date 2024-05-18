@@ -12,8 +12,10 @@
         android:theme="@style/Theme.SkyCarta.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
+
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            app:titleTextColor="@color/black"
             android:layout_height="40dp"
             android:background="@color/main_blue"
             app:popupTheme="@style/Theme.SkyCarta.PopupOverlay" />

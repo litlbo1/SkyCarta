@@ -50,7 +50,10 @@ dependencies {
     implementation ("com.squareup.okhttp3:okhttp:4.9.2")
     implementation ("com.google.code.gson:gson:2.8.6")
     implementation ("org.json:json:20210307")
-    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("org.jsoup:jsoup:1.13.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
+
 //    implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.1")

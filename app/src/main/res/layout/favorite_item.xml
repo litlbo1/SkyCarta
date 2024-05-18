@@ -6,16 +6,43 @@
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/favoriteInfoTextView"
+        android:id="@+id/favoriteFirstAirportTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Favorite Information"
+        android:text="Аэропорт 1"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/favoriteSecondAirportTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Аэропорт 2"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/favoriteFlightNumberTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Номер рейса"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/favoriteDepartureTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Время вылета"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/favoriteArrivalTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Время прилета"
         android:textSize="16sp" />
 
     <Button
         android:id="@+id/removeFavoriteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remove" />
+        android:text="Удалить" />
 </LinearLayout>

@@ -127,7 +127,16 @@ class Test_Test : AppCompatActivity() {
 
     private fun addToFavorites(destination: String, departureTime: String, date: String, airline: String) {
         val editor = sharedPreferences.edit()
-        editor.putString("$destination$departureTime", "Вылет в: $destination, Время вылета: $departureTime, Дата: $date, Авиакомпания: $airline, Аэропорт: $airportName")
+
+        val keyPrefix = "$destination-$departureTime-"
+
+        editor.putString(keyPrefix + "destination", destination)
+        editor.putString(keyPrefix + "departureTime", departureTime)
+        editor.putString(keyPrefix + "date", date)
+        editor.putString(keyPrefix + "airline", airline)
+        editor.putString(keyPrefix + "airportName", airportName)
+
         editor.apply()
     }
+
 }
