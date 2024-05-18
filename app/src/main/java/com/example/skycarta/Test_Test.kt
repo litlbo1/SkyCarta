@@ -17,6 +17,7 @@ class Test_Test : AppCompatActivity() {
 
     private lateinit var binding: ActivityTestTestBinding
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var airportName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,12 @@ class Test_Test : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("favorites", Context.MODE_PRIVATE)
 
         val airportId = intent.getStringExtra("AIRPORT_ID")
+        airportName = intent.getStringExtra("AIRPORT_NAME") ?: "" // Получить название аэропорта
+
+        if (airportName.isNotEmpty()) {
+            binding.airportNameTextView.text = "Airport: $airportName" // Установить название аэропорта
+        }
+
         if (airportId != null) {
             fetchFlights(airportId)
         }
@@ -39,7 +46,7 @@ class Test_Test : AppCompatActivity() {
             .build()
 
         val request = Request.Builder()
-            .url("http://10.0.2.2:5000/flights?airport_id=$airportId")
+            .url("http://192.168.1.44:3300/flights?airport_id=$airportId")
             .build()
 
         client.newCall(request).enqueue(object : okhttp3.Callback {
@@ -64,10 +71,12 @@ class Test_Test : AppCompatActivity() {
                                     val departureTime = flight.getString("departure_time")
 
                                     val flightView = layoutInflater.inflate(R.layout.flight_item, binding.flightsContainer, false)
-                                    val flightInfoTextView = flightView.findViewById<TextView>(R.id.flightInfoTextView)
+                                    val destinationTextView = flightView.findViewById<TextView>(R.id.flightDestination)
+                                    val departureTimeTextView = flightView.findViewById<TextView>(R.id.flightDepartureTime)
                                     val favoriteButton = flightView.findViewById<Button>(R.id.favoriteButton)
 
-                                    flightInfoTextView.text = "Destination: $destination\nDeparture Time: $departureTime"
+                                    destinationTextView.text = destination
+                                    departureTimeTextView.text = departureTime
 
                                     favoriteButton.setOnClickListener {
                                         addToFavorites(destination, departureTime)
@@ -94,7 +103,7 @@ class Test_Test : AppCompatActivity() {
 
     private fun addToFavorites(destination: String, departureTime: String) {
         val editor = sharedPreferences.edit()
-        editor.putString("$destination$departureTime", "Destination: $destination, Departure Time: $departureTime")
+        editor.putString("$destination$departureTime", "Вылет в: $destination, Время вылета: $departureTime, Аэропорт: $airportName")
         editor.apply()
     }
 }

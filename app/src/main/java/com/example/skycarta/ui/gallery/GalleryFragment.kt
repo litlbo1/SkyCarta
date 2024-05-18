@@ -66,9 +66,6 @@ class GalleryFragment : Fragment() {
         val galleryViewModel =
             ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(GalleryViewModel::class.java)
 
-        galleryViewModel.text.observe(viewLifecycleOwner) {
-            binding.textGallery.text = it
-        }
 
         return root
     }

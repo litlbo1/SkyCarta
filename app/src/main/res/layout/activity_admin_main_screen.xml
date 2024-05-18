@@ -12,6 +12,20 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/admin_messages_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140sp"
+        android:text="@string/admin_screen1" />
+
+    <Button
+        android:id="@+id/admin_invite_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:text="@string/admin_screen2" />
+
     <!-- Добавьте здесь элементы управления для администратора -->
 
 </LinearLayout>

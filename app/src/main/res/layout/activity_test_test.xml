@@ -7,6 +7,15 @@
     tools:context=".Test_Test">
 
     <TextView
+        android:id="@+id/airportNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Airport Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"/>
+
+    <TextView
         android:id="@+id/flightInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,11 +23,15 @@
         android:textSize="16sp"
         android:layout_margin="16dp"/>
 
-    <LinearLayout
-        android:id="@+id/flightsContainer"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="16dp"/>
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/flightsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp"/>
+    </ScrollView>
 </LinearLayout>

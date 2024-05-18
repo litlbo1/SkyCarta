@@ -7,110 +7,68 @@
     android:background="@color/main_blue"
     tools:context=".ui.gallery.GalleryFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.994" />
 
-    <FrameLayout
-        android:layout_width="370dp"
-        android:layout_height="550dp"
-        android:layout_marginTop="130dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/blue"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/nameSurnameProf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="120dp"
+            android:text="TextView" />
 
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="460dp"
-            android:layout_marginTop="80dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/btn_main"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/emailProf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/name_surname_prof"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="16dp"
-                android:layout_marginTop="80dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="TextView" />
-            <TextView
-                android:id="@+id/email_prof"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="TextView" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-            <Button
-                android:id="@+id/textButton"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/button_trans"
-                android:layout_width="match_parent"
-                android:textColor="@color/white"
-                android:layout_height="48dp"
-                android:paddingEnd="200dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="Настройки"
-                tools:ignore="RtlSymmetry" />
+        <Button
+            android:id="@+id/button"
+            android:layout_marginTop="20dp"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/user_profile_1" />
 
-            <Button
-                android:id="@+id/textButton1"
-                android:background="@drawable/button_trans"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:paddingEnd="200dp"
-                android:focusable="true"
-                android:textColor="@color/white"
-                android:text="Поддержка"
-                tools:ignore="RtlSymmetry" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="@string/user_profile_2" />
 
-            <Button
-                android:id="@+id/textButton2"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:background="@drawable/button_trans"
-                android:clickable="true"
-                android:focusable="true"
-                android:paddingEnd="140dp"
-                android:text="Выйти из аккаунта"
-                android:textColor="@color/white"
-                tools:ignore="RtlSymmetry" />
-
-        </LinearLayout>
-
-        <com.google.android.material.imageview.ShapeableImageView
-            app:shapeAppearanceOverlay="@style/RoundedCorners"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/imageView7"
-            android:scaleType="centerCrop"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            app:srcCompat="@drawable/dagestan_img" />
-
-
-    </FrameLayout>
+        <Button
+            android:id="@+id/textButton2"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="@string/user_profile_3" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

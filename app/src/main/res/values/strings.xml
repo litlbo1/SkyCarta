@@ -16,6 +16,7 @@
     <string name="pass">Пароль</string>
     <string name="name">Имя</string>
     <string name="surname">Фамилия</string>
+    <string name="fav_btn">Добавить в избранное</string>
 
     <string name="title_activity_lobby_screen2">Lobby_screen2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -30,7 +31,18 @@
     <string name="user_name">Вехов Эдуард</string>
     <string name="admin_label">Добро подаловать Администратор</string>
 
-
     //main screen
     <string name="btn_main_search">Найти рейс</string>
+    <string name="lobby_label">Куда полетим сегодня?</string>
+
+
+    //admin
+    <string name="admin_screen1">Модерировать обращения</string>
+    <string name="admin_screen2">Отправить заявку Администратору</string>
+
+
+    //user_profile
+    <string name="user_profile_1">Настройки профиля</string>
+    <string name="user_profile_2">Поддержка</string>
+    <string name="user_profile_3">Выйти</string>
 </resources>

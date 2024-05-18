@@ -2,21 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/flightInfoTextView"
-        android:layout_width="0dp"
+        android:id="@+id/flightDestination"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Flight Information"
+        android:textColor="@color/black"
+        android:text="Destination"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/flightDepartureTime"
+        android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Departure Time"
         android:textSize="16sp" />
 
     <Button
         android:id="@+id/favoriteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add to Favorites" />
-
+        android:text="@string/fav_btn" />
 </LinearLayout>

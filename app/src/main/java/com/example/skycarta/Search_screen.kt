@@ -69,6 +69,7 @@ class Search_screen : AppCompatActivity() {
                 1 -> {
                     val intent = Intent(this, Test_Test::class.java)
                     intent.putExtra("AIRPORT_ID", airportId)
+                    intent.putExtra("AIRPORT_NAME", airport) // Передаем название аэропорта
                     startActivity(intent)
                 }
             }

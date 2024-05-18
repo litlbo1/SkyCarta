@@ -20,6 +20,12 @@
         android:theme="@style/Theme.SkyCarta"
         tools:targetApi="31">
         <activity
+            android:name=".Admin_invite_screen"
+            android:exported="false" />
+        <activity
+            android:name=".Messages_users_screen"
+            android:exported="false" />
+        <activity
             android:name=".Admin_main_screen"
             android:exported="false" />
         <activity
