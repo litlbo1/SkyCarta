@@ -7,7 +7,7 @@
     <string name="register">Регистрация</string>
     <string name="main_name">Добро</string>
     <string name="main_name2">Пожаловать</string>
-    <string name="have_acc">У вас есть аккаунт?</string>
+    <string name="have_acc">У вас еще нет аккаунта?</string>
     <string name="img">IMG</string>
     <string name="lobby_text">Куда полетим сегодня?</string>
     <string name="lobby_tf">введите аэропорт</string>
@@ -48,4 +48,9 @@
     <string name="user_profile_1">Настройки профиля</string>
     <string name="user_profile_2">Поддержка</string>
     <string name="user_profile_3">Выйти</string>
+
+    //settings_screen
+    <string name="change_pass_text">Сменить пароль</string>
+    <string name="change_color_text">Сменить цвет профиля</string>
+    <string name="delete_account_text">Удалить аккаунт</string>
 </resources>

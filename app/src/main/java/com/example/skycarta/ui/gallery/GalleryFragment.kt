@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.skycarta.MainActivity
+import com.example.skycarta.Settings_screen
 import com.example.skycarta.databinding.FragmentGalleryBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -59,6 +60,11 @@ class GalleryFragment : Fragment() {
                 }
         }
 
+        binding.settingBtn.setOnClickListener {
+            val i = Intent(requireContext(), Settings_screen::class.java)
+            startActivity(i)
+        }
+
         binding.textButton2.setOnClickListener{
             signOut()
         }
@@ -93,5 +99,4 @@ class GalleryFragment : Fragment() {
         // Закрываем активность, которая содержит этот фрагмент
         activity?.finish()
     }
-
 }

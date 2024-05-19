@@ -71,7 +71,7 @@ class AirportSelected_screen : AppCompatActivity() {
         }
     }
 
-    private fun addToFavorites(flight: Flights, airportName1: String, airportName2: String) {
+    fun addToFavorites(flight: Flights, airportName1: String, airportName2: String) {
         val sharedPreferences = getSharedPreferences("favorites", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("flight_${flight.flightNumber}_flightNumber", flight.flightNumber)
