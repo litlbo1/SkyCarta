@@ -61,8 +61,8 @@ class HomeFragment : Fragment() {
             val removeButton = favoriteView.findViewById<Button>(R.id.removeFavoriteButton)
 
             favoriteFlightNumberTextView.text = "Номер рейса: " + (flightData["flightNumber"] ?: "")
-            favoriteDepartureTimeTextView.text = "Время вылета: " + (flightData["departureTime"] ?: "")
-            favoriteArrivalTimeTextView.text = "Время прилета: " + (flightData["arrivalTime"] ?: "")
+            favoriteDepartureTimeTextView.text = "" + (flightData["departureTime"] ?: "")
+            favoriteArrivalTimeTextView.text = "" + (flightData["arrivalTime"] ?: "")
             favoriteAirport1NameTextView.text = "" + (flightData["airportName1"] ?: "")
             favoriteAirport2NameTextView.text = "" + (flightData["airportName2"] ?: "")
 

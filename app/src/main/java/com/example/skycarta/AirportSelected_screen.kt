@@ -2,6 +2,7 @@ package com.example.skycarta
 
 import android.os.AsyncTask
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -23,12 +24,13 @@ class AirportSelected_screen : AppCompatActivity() {
 
         val firstAirport = intent.getStringExtra("FIRST_AIRPORT")
         val secondAirport = intent.getStringExtra("SECOND_AIRPORT")
+        val firstAirportId = intent.getStringExtra("FIRST_AIRPORT_ID")
         val secondAirportId = intent.getStringExtra("SECOND_AIRPORT_ID")
 
-        binding.textViewFirstAirport.text = "Аэропорт 1: $firstAirport"
-        binding.textViewSecondAirport.text = "Аэропорт 2: $secondAirport"
+        binding.textViewFirstAirport.text = "$firstAirport"
+        binding.textViewSecondAirport.text = "$secondAirport"
 
-        FetchFlightsTask().execute(secondAirportId)
+        FetchFlightsTask().execute(firstAirportId, secondAirportId)
     }
 
     private fun addFlightViews() {
@@ -81,9 +83,15 @@ class AirportSelected_screen : AppCompatActivity() {
     }
 
     inner class FetchFlightsTask : AsyncTask<String, Void, String>() {
+        override fun onPreExecute() {
+            super.onPreExecute()
+            binding.progressBar.visibility = View.VISIBLE
+        }
+
         override fun doInBackground(vararg params: String?): String? {
-            val airportId = params[0]
-            val urlString = "http://192.168.1.44:5500/flights?origin=svo&destination=$airportId"
+            val firstAirportId = params[0]
+            val secondAirportId = params[1]
+            val urlString = "http://192.168.1.44:5500/flights?origin=$firstAirportId&destination=$secondAirportId"
             val url = URL(urlString)
             val connection = url.openConnection() as HttpURLConnection
             connection.requestMethod = "GET"
@@ -93,6 +101,7 @@ class AirportSelected_screen : AppCompatActivity() {
 
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
+            binding.progressBar.visibility = View.GONE
             if (result != null) {
                 val jsonObject = JSONObject(result)
                 val flightsArray = jsonObject.getJSONArray("flights")

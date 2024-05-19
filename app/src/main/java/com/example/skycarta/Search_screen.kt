@@ -13,6 +13,7 @@ class Search_screen : AppCompatActivity() {
 
     lateinit var binding: ActivitySearchScreenBinding
     var firstAirport: String? = null
+    var firstAirportId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +21,13 @@ class Search_screen : AppCompatActivity() {
         setContentView(binding.root)
 
         val airportMap = mapOf(
-            "Moscow" to "svo",
-            "Astrakhan" to "asf",
-            "Samara" to "kuf",
-            "Saratov" to "rtw"
+            "Москва" to "svo",
+            "Астрахань" to "asf",
+            "Самара" to "kuf",
+            "Саратов" to "gsv",
+            "Хабаровск" to "knv",
+            "Сочи" to "aer",
+            "Томск" to "tof"
         )
 
         val airportNames = airportMap.keys.toTypedArray()
@@ -51,7 +55,8 @@ class Search_screen : AppCompatActivity() {
 
         binding.listAirports.setOnItemClickListener { parent, view, position, id ->
             val selectedAirport = parent.getItemAtPosition(position) as String
-            showOptionsDialog(selectedAirport, airportMap[selectedAirport] ?: "")
+            val selectedAirportId = airportMap[selectedAirport] ?: ""
+            showOptionsDialog(selectedAirport, selectedAirportId)
         }
     }
 
@@ -64,12 +69,13 @@ class Search_screen : AppCompatActivity() {
             when (which) {
                 0 -> {
                     firstAirport = airport
+                    firstAirportId = airportId
                     showSecondAirportDialog()
                 }
                 1 -> {
                     val intent = Intent(this, Test_Test::class.java)
                     intent.putExtra("AIRPORT_ID", airportId)
-                    intent.putExtra("AIRPORT_NAME", airport)
+                    intent.putExtra("AIRPORT_NAME", airport) // Передаем название аэропорта
                     startActivity(intent)
                 }
             }
@@ -79,10 +85,14 @@ class Search_screen : AppCompatActivity() {
 
     private fun showSecondAirportDialog() {
         val airportMap = mapOf(
-            "Moscow" to "svo",
-            "Astrakhan" to "urwa",
-            "Samara" to "kuf",
-            "Saratov" to "rtw"
+            "Москва" to "svo",
+            "Астрахань" to "urwa",
+            "Самара" to "uwww",
+            "Саратов" to "uwsg",
+            "Хабаровск" to "uhhh",
+            "Сочи" to "urss",
+            "Томск" to "untt"
+
         )
 
         val airportNames = airportMap.keys.toTypedArray()
@@ -101,6 +111,7 @@ class Search_screen : AppCompatActivity() {
             val secondAirportId = airportMap[secondAirport] ?: ""
             val intent = Intent(this, AirportSelected_screen::class.java).apply {
                 putExtra("FIRST_AIRPORT", firstAirport)
+                putExtra("FIRST_AIRPORT_ID", firstAirportId)
                 putExtra("SECOND_AIRPORT", secondAirport)
                 putExtra("SECOND_AIRPORT_ID", secondAirportId)
             }
